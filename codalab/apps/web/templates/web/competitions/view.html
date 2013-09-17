@@ -34,7 +34,7 @@
                             <section class="challStatusStripSection">
                                 {% for phase in competition.phases.all %}
                                 <section>
-                                    <label>
+                                    <label id="results_phase_{{phase.id}}">
                                         <span>{{phase.label}}</span> 
                                         <br>
                                         <span>{{phase.start_date}}</span>
