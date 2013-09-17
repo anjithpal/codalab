@@ -717,3 +717,15 @@ div.pending-approval-select.columns {
 		}
 	}
 }
+.competitionsProfileImage{
+	position:relative;
+	height:160px;
+		.competitionsProfileImage-Container{
+		position:absolute;
+		bottom:0;
+		top:0;
+		left:0;
+		right:0;
+		overflow:hidden;
+		}
+}

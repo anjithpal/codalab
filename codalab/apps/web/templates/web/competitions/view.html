@@ -9,11 +9,13 @@
         <div class="CompetitionsDetailContainer">
             <section class="competitionsDetailHeader">
                 <figure class="competitionsProfileImage">
-                    {% if competition.image_url %}
-                    <img id="imgProfileImage" src="{{ competition.image_url }}">
-                    {% else %}
-                    <img id="imgProfileImage" src="{% static "site/Images/ProfileImageDummy.jpg" %}">
-                    {% endif %}
+                    <div class="competitionsProfileImage-Container">
+                        {% if competition.image_url %}
+                        <img id="imgProfileImage" src="{{ competition.image_url }}">
+                        {% else %}
+                        <img id="imgProfileImage" src="{% static "site/Images/ProfileImageDummy.jpg" %}">
+                        {% endif %}
+                    </div>
                 </figure>
                 <div class="competitionsHeaderTitle">
                     <h2>{{ competition.title }}</h2>

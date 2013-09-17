@@ -344,8 +344,26 @@ var Competition;
 
 })(Competition || (Competition = {}));
 var prTable;
-$(document).ready(function () {
 
+function imageResize() {
+    var imageHeight = $("#imgProfileImage").height();
+    var imageWidth = $("#imgProfileImage").width();
+    var containerHeight = $(".competitionsProfileImage-Container").height();
+    var containerWidth = $(".competitionsProfileImage-Container").width();
+
+    if (imageHeight < imageWidth) {
+        $("#imgProfileImage").css("width", "auto");
+        $("#imgProfileImage").css("height", containerWidth)
+    }
+    else {
+        $("#imgProfileImage").css("width", containerWidth);
+        $("#imgProfileImage").css("height", "auto");
+        //$("#imgProfileImage").css("margin-top", ((imageHeight - containerHeight)/-2))
+    }
+}
+
+$(document).ready(function () {
+    imageResize()
     $("#checkbox").click(function (e) { Competition.registationCanProceed(); });
 
     $("#participate_form").submit(function (event) {
