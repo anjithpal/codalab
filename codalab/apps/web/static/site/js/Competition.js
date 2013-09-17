@@ -386,11 +386,11 @@ $(document).ready(function () {
         Competition.invokePhaseButtonOnOpen("submissions_phase_buttons");
     });
 
-    $("#results_phase_buttons .button").each(function (e, index) {
+    $("#results_phase_buttons .button, .challStatusStripSection label").each(function (e, index) {
         $(this).click(function () {
             var phaseId = $.trim($(this).attr("id").replace("results_phase_", ""));
             $("#results_phase_buttons .button").removeClass('selected');
-            $(this).addClass('selected');
+            $('#results_phase_buttons #' + $(this).attr("id")).addClass('selected');
             var competitionId = $("#competitionId").val();
             Competition.getPhaseResults(competitionId, phaseId);
         });
